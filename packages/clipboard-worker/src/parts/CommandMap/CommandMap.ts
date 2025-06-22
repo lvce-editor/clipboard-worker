@@ -1,8 +1,12 @@
-import * as ClipBoard from '../ClipBoard/ClipBoard.ts'
+import * as ReadFilesNative from '../ReadFilesNative/ReadFilesNative.ts'
+import * as WriteFilesNative from '../WriteFilesNative/WriteFilesNative.ts'
+import * as WriteImage from '../WriteImage/WriteImage.ts'
+import * as WriteText from '../WriteText/WriteText.ts'
 
 export const commandMap = {
-  'ClipBoard.readNativeFiles': ClipBoard.readNativeFiles,
-  'ClipBoard.writeNativeFiles': ClipBoard.writeNativeFiles,
-  'ClipBoard.writeText': ClipBoard.writeText,
+  'ClipBoard.readNativeFiles': ReadFilesNative.readNativeFiles,
+  'ClipBoard.writeNativeFiles': WriteFilesNative.writeNativeFiles,
+  'ClipBoard.writeText': WriteText.writeText,
+  'ClipBoard.writeImage': WriteImage.writeImage,
   // TODO add handlemessageport
 }
