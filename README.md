@@ -1,2 +1,3 @@
-# clipboard-worker
-Clipboard Worker
+# ClipBoard Worker
+
+WebWorker for the clipboard functionality in Lvce Editor.
