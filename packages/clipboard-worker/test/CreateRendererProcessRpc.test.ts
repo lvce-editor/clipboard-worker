@@ -21,6 +21,7 @@ jest.unstable_mockModule('../src/parts/SendMessagePortToRendererProcess/SendMess
 jest.unstable_mockModule('@lvce-editor/rpc', () => {
   return {
     PlainMessagePortRpcParent: mockPlainMessagePortRpcParent,
+    MessagePortRpcParent: mockPlainMessagePortRpcParent,
   }
 })
 
