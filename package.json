@@ -8,7 +8,7 @@
   "scripts": {
     "build": "node packages/build/src/build.js",
     "build:static": "node packages/build/src/build-static.js",
-    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/clipboard-worker/src/clipboardWorkerMain.ts --outfile=.tmp/dist/dist/clipboardWorkerMain.js",
+    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/clipboard-worker/src/clipBoardWorkerMain.ts --outfile=.tmp/dist/dist/clipBoardWorkerMain.js",
     "dev": "node packages/build/src/dev.js",
     "e2e": "cd packages/e2e && npm run e2e",
     "format": "prettier --write .",
