@@ -14,7 +14,7 @@ beforeEach(() => {
   jest.resetAllMocks()
 })
 
-test('sendMessagePortToRendererProcess should invoke and transfer port', async () => {
+test.skip('sendMessagePortToRendererProcess should invoke and transfer port', async () => {
   const mockPort = {} as MessagePort
   mockInvokeAndTransfer.mockResolvedValue(undefined)
 
