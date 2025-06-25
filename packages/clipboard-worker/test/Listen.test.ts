@@ -16,6 +16,13 @@ jest.unstable_mockModule('@lvce-editor/rpc', () => {
         }
       }),
     },
+    MessagePortRpcParent: {
+      create: jest.fn(() => {
+        return {
+          dispose: jest.fn(),
+        }
+      }),
+    },
   }
 })
 
