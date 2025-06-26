@@ -1,4 +1,5 @@
 import type { ExecArgs } from '../ExecArgs/ExecArgs.ts'
+import { getWriteNativeFilesArgsXClip } from '../GetWriteNativeFilesArgsXclip/GetWriteNativeFilesArgsXclip.ts'
 
 const getUri = (files: readonly string[]): string => {
   const first = files[0]
@@ -7,15 +8,6 @@ const getUri = (files: readonly string[]): string => {
 }
 
 const getWriteNativeFilesArgsXsel = (files: readonly string[]): ExecArgs => {
-  const uri = getUri(files)
-  return {
-    command: 'xsel',
-    args: ['--clipboard'],
-    stdin: uri,
-  }
-}
-
-const getWriteNativeFilesArgsXClip = (files: readonly string[]): ExecArgs => {
   const uri = getUri(files)
   return {
     command: 'xsel',
