@@ -1,18 +1,17 @@
 import type { ExecArgs } from '../ExecArgs/ExecArgs.ts'
+import { toUri } from '../ToUri/ToUri.ts'
 
 // TODO support multiple file uris
-const getUri = (files: readonly string[]): string => {
-  const first = files[0]
-  const uri = `file://${first}`
-  return uri
+const getUris = (files: readonly string[]): readonly string[] => {
+  return files.map(toUri)
 }
 
 const getStdin = (files: readonly string[]): string => {
-  const uri = getUri(files)
-  return `copy\n${uri}`
+  const uris = getUris(files)
+  return ['copy', ...uris].join('\n')
 }
 
-export const getWriteNativeFilesArgsXClip = (files: readonly string[]): ExecArgs => {
+export const getWriteNativeFilesArgsXClip = (files: readonly string[]): readonly ExecArgs[] => {
   const stdin = getStdin(files)
   return {
     command: 'xclip',
