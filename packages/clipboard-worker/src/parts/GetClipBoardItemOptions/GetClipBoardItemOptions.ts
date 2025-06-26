@@ -1,8 +1,8 @@
+import { resourcesMime } from '../ResourcesMimeType/ResourcesMimeType.ts'
+
 interface ClipBoardItem {
   readonly [key: string]: Blob
 }
-
-const resourcesMime = 'application/vnd.lvce.resources'
 
 export const getClipBoardItemOptions = (resources: readonly string[]): readonly ClipBoardItem[] => {
   return [
