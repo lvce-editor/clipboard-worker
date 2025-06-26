@@ -2,7 +2,7 @@ import * as ClipBoardProcess from '../ClipBoardProcess/ClipBoardProcess.ts'
 import { createClipBoardProcessRpc } from '../CreateClipBoardProcessRpc/CreateClipBoardProcessRpc.ts'
 import * as PlatformType from '../PlatformType/PlatformType.ts'
 
-const clipboardProcessEnabled = false
+const clipboardProcessEnabled = true
 
 export const initializeSharedProcess = async (platform: number): Promise<void> => {
   if (platform === PlatformType.Web) {
