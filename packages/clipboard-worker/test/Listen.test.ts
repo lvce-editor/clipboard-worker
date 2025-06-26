@@ -23,6 +23,13 @@ jest.unstable_mockModule('@lvce-editor/rpc', () => {
         }
       }),
     },
+    WebSocketRpcParent: {
+      create: jest.fn(() => {
+        return {
+          dispose: jest.fn(),
+        }
+      }),
+    },
   }
 })
 
