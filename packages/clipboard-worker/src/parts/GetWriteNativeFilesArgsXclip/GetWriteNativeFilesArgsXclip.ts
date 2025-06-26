@@ -1,24 +1,27 @@
 import type { ExecArgs } from '../ExecArgs/ExecArgs.ts'
-import { toUri } from '../ToUri/ToUri.ts'
+import { getStdinGnomeCopiedFiles } from '../GetStdinGnomeCopiedFIles/GetStdinGnomeCopiedFiles.ts'
+import { getStdinTextUriList } from '../GetStdinTextUriList/GetStdinTextUriList.ts'
 
-// TODO support multiple file uris
-const getUris = (files: readonly string[]): readonly string[] => {
-  return files.map(toUri)
+const getWriteNativeFilesArgsXClipGnomeCopiedFiles = (files: readonly string[]): ExecArgs => {
+  const stdin = getStdinGnomeCopiedFiles(files)
+  return {
+    command: 'xclip',
+    args: ['-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'],
+    stdin: stdin,
+    stdio: ['pipe', 'ignore', 'ignore'],
+  }
 }
 
-const getStdin = (files: readonly string[]): string => {
-  const uris = getUris(files)
-  return ['copy', ...uris].join('\n')
+const getWriteNativeFilesArgsTextUriList = (files: readonly string[]): ExecArgs => {
+  const stdin = getStdinTextUriList(files)
+  return {
+    command: 'xclip',
+    args: ['-selection', 'clipboard', '-t', 'text/uri-list'],
+    stdin: stdin,
+    stdio: ['pipe', 'ignore', 'ignore'],
+  }
 }
 
 export const getWriteNativeFilesArgsXClip = (files: readonly string[]): readonly ExecArgs[] => {
-  const stdin = getStdin(files)
-  return [
-    {
-      command: 'xclip',
-      args: ['-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'],
-      stdin,
-      stdio: ['pipe', 'ignore', 'ignore'],
-    },
-  ]
+  return [getWriteNativeFilesArgsXClipGnomeCopiedFiles(files), getWriteNativeFilesArgsTextUriList(files)]
 }
