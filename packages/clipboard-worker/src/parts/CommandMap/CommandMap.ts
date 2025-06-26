@@ -8,13 +8,13 @@ import * as WriteImage from '../WriteImage/WriteImage.ts'
 import * as WriteText from '../WriteText/WriteText.ts'
 
 export const commandMap = {
+  'ClipBoard.hotReload': HotReload.hotReload,
   'ClipBoard.initialize': Initialize.initialize,
   'ClipBoard.readNativeFiles': ReadFilesNative.readNativeFiles,
+  'ClipBoard.readText': ReadText.readText,
+  'ClipBoard.writeFiles': WriteFiles.copyFilesToClipBoard,
   'ClipBoard.writeImage': WriteImage.writeImage,
   'ClipBoard.writeNativeFiles': WriteFilesNative.writeNativeFiles,
   'ClipBoard.writeText': WriteText.writeText,
-  'ClipBoard.readText': ReadText.readText,
-  'ClipBoard.writeFiles': WriteFiles.copyFilesToClipBoard,
-  'ClipBoard.hotReload': HotReload.hotReload,
   // TODO add handlemessageport
 }
