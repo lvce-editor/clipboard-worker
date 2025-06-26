@@ -18,5 +18,6 @@ export const getWriteNativeFilesArgsXClip = (files: readonly string[]): ExecArgs
     command: 'xclip',
     args: ['-selection', 'clipboard', '-l', '1', '-t', 'x-special/gnome-copied-files'],
     stdin,
+    stdio: ['pipe', 'ignore', 'ignore'],
   }
 }
