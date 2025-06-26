@@ -4,6 +4,5 @@ import { initializeSharedProcess } from '../InitializeSharedProcess/InitializeSh
 export const initialize = async (platform: number): Promise<void> => {
   // TODO if platform is remote or electron, create shared process rpc
   await initializeRendererProcess()
-
-  await initializeSharedProcess()
+  await initializeSharedProcess(platform)
 }
