@@ -13,10 +13,12 @@ const getStdin = (files: readonly string[]): string => {
 
 export const getWriteNativeFilesArgsXClip = (files: readonly string[]): readonly ExecArgs[] => {
   const stdin = getStdin(files)
-  return {
-    command: 'xclip',
-    args: ['-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'],
-    stdin,
-    stdio: ['pipe', 'ignore', 'ignore'],
-  }
+  return [
+    {
+      command: 'xclip',
+      args: ['-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'],
+      stdin,
+      stdio: ['pipe', 'ignore', 'ignore'],
+    },
+  ]
 }
