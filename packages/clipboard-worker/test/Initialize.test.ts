@@ -1,7 +1,6 @@
 import { test, expect, jest, beforeEach } from '@jest/globals'
 
 const mockInitializeRendererProcess = jest.fn() as jest.MockedFunction<any>
-const mockInitializeSharedProcess = jest.fn() as jest.MockedFunction<any>
 
 jest.unstable_mockModule('../src/parts/InitializeRendererProcess/InitializeRendererProcess.ts', () => {
   return {
