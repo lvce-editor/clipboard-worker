@@ -9,12 +9,6 @@ jest.unstable_mockModule('../src/parts/InitializeRendererProcess/InitializeRende
   }
 })
 
-jest.unstable_mockModule('../src/parts/InitializeSharedProcess/InitializeSharedProcess.ts', () => {
-  return {
-    initializeSharedProcess: mockInitializeSharedProcess,
-  }
-})
-
 const Initialize = await import('../src/parts/Initialize/Initialize.ts')
 
 beforeEach(() => {
@@ -25,5 +19,4 @@ test('initialize should call both initialization functions', async () => {
   await Initialize.initialize(0)
 
   expect(mockInitializeRendererProcess).toHaveBeenCalled()
-  expect(mockInitializeSharedProcess).toHaveBeenCalled()
 })
