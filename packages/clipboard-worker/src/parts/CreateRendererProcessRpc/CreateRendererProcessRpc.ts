@@ -1,12 +1,12 @@
 import { type Rpc, TransferMessagePortRpcParent } from '@lvce-editor/rpc'
 import { VError } from '@lvce-editor/verror'
-import * as SendMessagePortToRendererProcess from '../SendMessagePortToRendererProcess/SendMessagePortToRendererProcess.ts'
+import * as RendererWorker from '../RendererWorker/RendererWorker.ts'
 
 export const createRendererProcessRpc = async (): Promise<Rpc> => {
   try {
     const rpc = await TransferMessagePortRpcParent.create({
       commandMap: {},
-      send: SendMessagePortToRendererProcess.sendMessagePortToRendererProcess,
+      send: RendererWorker.sendMessagePortToRendererProcess,
     })
     return rpc
   } catch (error) {
