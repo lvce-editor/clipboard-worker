@@ -2,7 +2,7 @@ import { type Rpc, TransferMessagePortRpcParent } from '@lvce-editor/rpc'
 import { VError } from '@lvce-editor/verror'
 import * as SendMessagePortToRendererProcess from '../SendMessagePortToRendererProcess/SendMessagePortToRendererProcess.ts'
 
-export const createExtensionHostRpc = async (): Promise<Rpc> => {
+export const createRendererProcessRpc = async (): Promise<Rpc> => {
   try {
     const rpc = await TransferMessagePortRpcParent.create({
       commandMap: {},
