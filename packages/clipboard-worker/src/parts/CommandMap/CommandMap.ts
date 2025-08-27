@@ -3,6 +3,7 @@ import * as WriteFiles from '../CopyFilesToClipBoard/CopyFilesToClipBoard.ts'
 import * as EnableMemoryClipBoard from '../EnableMemoryClipBoard/EnableMemoryClipBoard.ts'
 import * as HotReload from '../HotReload/HotReload.ts'
 import * as Initialize from '../Initialize/Initialize.ts'
+import * as MemoryClipBoardState from '../MemoryClipBoardState/MemoryClipBoardState.ts'
 import * as ReadFilesNative from '../ReadFilesNative/ReadFilesNative.ts'
 import * as ReadText from '../ReadText/ReadText.ts'
 import * as WriteBlob from '../WriteBlob/WriteBlob.ts'
@@ -23,5 +24,6 @@ export const commandMap = {
   'ClipBoard.writeImage': WriteImage.writeImage,
   'ClipBoard.writeNativeFiles': WriteFilesNative.writeNativeFiles,
   'ClipBoard.writeText': WriteText.writeText,
+  'ClipBoard.readMemoryText': MemoryClipBoardState.readFiles,
   // TODO add handlemessageport
 }
