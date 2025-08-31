@@ -16,6 +16,7 @@ export const commandMap = {
   'ClipBoard.enableMemoryClipBoard': EnableMemoryClipBoard.enableMemoryClipBoard,
   'ClipBoard.hotReload': HotReload.hotReload,
   'ClipBoard.initialize': Initialize.initialize,
+  'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
   'ClipBoard.readNativeFiles': ReadFilesNative.readNativeFiles,
   'ClipBoard.readText': ReadText.readText,
   'ClipBoard.terminate': terminate,
@@ -24,6 +25,5 @@ export const commandMap = {
   'ClipBoard.writeImage': WriteImage.writeImage,
   'ClipBoard.writeNativeFiles': WriteFilesNative.writeNativeFiles,
   'ClipBoard.writeText': WriteText.writeText,
-  'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
   // TODO add handlemessageport
 }
