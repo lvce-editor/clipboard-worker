@@ -24,6 +24,6 @@ export const commandMap = {
   'ClipBoard.writeImage': WriteImage.writeImage,
   'ClipBoard.writeNativeFiles': WriteFilesNative.writeNativeFiles,
   'ClipBoard.writeText': WriteText.writeText,
-  'ClipBoard.readMemoryText': MemoryClipBoardState.readFiles,
+  'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
   // TODO add handlemessageport
 }
