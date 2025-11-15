@@ -5,7 +5,7 @@ import { resourcesMime } from '../ResourcesMimeType/ResourcesMimeType.ts'
 
 export const readFilesFromClipBoardWeb = async (): Promise<readonly string[]> => {
   if (MemoryClipBoardState.get()) {
-    return MemoryClipBoardStatereadFiles()
+    return MemoryClipBoardState.readFiles()
   }
   const options = {
     format: `web ${resourcesMime}`,
