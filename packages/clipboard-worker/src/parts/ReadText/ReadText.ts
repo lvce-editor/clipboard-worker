@@ -2,9 +2,13 @@ import { isClipboardUnsupportedError } from '../IsClipboardUnsupportedError/IsCl
 import { isPermissionDeniedError } from '../IsPermissionDeniedError/IsPermissionDeniedError.ts'
 import * as RendererProcess from '../RendererProcess/RendererProcess.ts'
 import { VError } from '../VError/VError.ts'
+import * as MemoryClipBoardState from '../MemoryClipBoardState/MemoryClipBoardState.ts'
 
-export const readText = async (): Promise<any> => {
+export const readText = async (): Promise<string> => {
   try {
+    if (MemoryClipBoardState.get()) {
+      return MemoryClipBoardState.readText()
+    }
     // @ts-ignore
     return await RendererProcess.invoke('ClipBoard.readText')
   } catch (error) {
