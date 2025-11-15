@@ -17,6 +17,7 @@ export const writeFiles = (value: readonly string[]): void => {
 export const writeText = (value: string): void => {
   text = value
 }
+
 export const readText = (): string => {
   return text
 }
