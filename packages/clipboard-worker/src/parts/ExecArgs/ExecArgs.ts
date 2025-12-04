@@ -1,6 +1,6 @@
 export interface ExecArgs {
-  readonly command: string
   readonly args: readonly string[]
+  readonly command: string
   readonly stdin: string
   readonly stdio: readonly string[]
 }
