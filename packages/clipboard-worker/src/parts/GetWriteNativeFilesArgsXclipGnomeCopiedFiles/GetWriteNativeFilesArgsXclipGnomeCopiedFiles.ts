@@ -4,8 +4,8 @@ import { getStdinGnomeCopiedFiles } from '../GetStdinGnomeCopiedFIles/GetStdinGn
 export const getWriteNativeFilesArgsXClipGnomeCopiedFiles = (files: readonly string[]): ExecArgs => {
   const stdin = getStdinGnomeCopiedFiles(files)
   return {
-    command: 'xclip',
     args: ['-selection', '-l', '0', 'clipboard', '-t', 'x-special/gnome-copied-files'],
+    command: 'xclip',
     stdin: stdin,
     stdio: ['pipe', 'ignore', 'ignore'],
   }
