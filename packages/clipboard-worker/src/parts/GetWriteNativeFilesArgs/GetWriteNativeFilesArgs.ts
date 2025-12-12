@@ -12,8 +12,8 @@ const getWriteNativeFilesArgsXsel = (files: readonly string[]): readonly ExecArg
   const uri = getUri(files)
   return [
     {
-      command: 'xsel',
       args: ['--clipboard'],
+      command: 'xsel',
       stdin: uri,
       stdio: ['pipe', 'pipe', 'pipe'],
     },

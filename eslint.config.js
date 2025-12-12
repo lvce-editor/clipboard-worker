@@ -5,9 +5,6 @@ export default [
   ...config.default,
   ...actions.default,
   {
-    ignores: ['packages/clipboard-worker/src/clipboardWorkerMain.ts'],
-  },
-  {
     files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',

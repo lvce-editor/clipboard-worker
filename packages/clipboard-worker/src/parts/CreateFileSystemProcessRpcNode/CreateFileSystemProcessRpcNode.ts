@@ -10,8 +10,8 @@ export const createClipBoardProcessRpcNode = async (): Promise<Rpc> => {
     const wsUrl = GetWebSocketUrl.getWebSocketUrl('clipboard-process', host, protocol)
     const webSocket = new WebSocket(wsUrl)
     const rpc = await WebSocketRpcParent.create({
-      webSocket,
       commandMap: {},
+      webSocket,
     })
     return rpc
   } catch (error) {

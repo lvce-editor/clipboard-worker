@@ -4,8 +4,8 @@ import { getStdinTextUriList } from '../GetStdinTextUriList/GetStdinTextUriList.
 export const getWriteNativeFilesArgsTextUriList = (files: readonly string[]): ExecArgs => {
   const stdin = getStdinTextUriList(files)
   return {
-    command: 'xclip',
     args: ['-selection', '-l', '1', 'clipboard', '-t', 'text/uri-list'],
+    command: 'xclip',
     stdin: stdin,
     stdio: ['pipe', 'ignore', 'ignore'],
   }

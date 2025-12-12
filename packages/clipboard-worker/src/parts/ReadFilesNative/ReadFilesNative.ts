@@ -6,8 +6,8 @@ export const readNativeFiles = async (): Promise<NativeFilesResult> => {
   try {
     const uris = await readFilesFromClipBoardWeb()
     return {
-      type: 'copy',
       files: uris,
+      type: 'copy',
     }
   } catch (error) {
     throw new VError(error, 'Failed to read files from native clipboard')
