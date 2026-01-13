@@ -8,22 +8,28 @@ jest.unstable_mockModule('../src/parts/RendererWorker/RendererWorker.ts', () => 
   }
 })
 
+jest.unstable_mockModule('@lvce-editor/rpc-registry', () => ({
+  RpcId: {
+    DebugWorker: 55,
+  },
+}))
+
 const SendMessagePortToRendererProcess = await import('../src/parts/SendMessagePortToRendererProcess/SendMessagePortToRendererProcess.ts')
 
 beforeEach(() => {
   jest.resetAllMocks()
 })
 
-test.skip('sendMessagePortToRendererProcess should invoke and transfer port', async () => {
+test('sendMessagePortToRendererProcess should invoke and transfer port', async () => {
   const mockPort = {} as MessagePort
   mockInvokeAndTransfer.mockResolvedValue(undefined)
 
   await SendMessagePortToRendererProcess.sendMessagePortToRendererProcess(mockPort)
 
   expect(mockInvokeAndTransfer).toHaveBeenCalledWith(
-    'SendMessagePortToExtensionHostWorker.sendMessagePortToExtensionHostWorker',
+    'SendMessagePortToExtensionHostWorker.sendMessagePortToRendererProcess',
     mockPort,
-    'HandleMessagePort.handleMessagePort2',
+    'HandleMessagePort.handleMessagePort',
     55,
   )
 })
