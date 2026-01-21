@@ -12,6 +12,6 @@ export const readFilesFromClipBoardWeb = async (): Promise<readonly string[]> =>
   }
   // @ts-ignore
   const items = await RendererProcess.invoke('ClipBoard.read', options)
-  const urls = await deserializeUrls(items as any)
+  const urls = await deserializeUrls(items)
   return urls
 }
