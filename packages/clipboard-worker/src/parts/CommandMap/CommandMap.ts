@@ -1,6 +1,7 @@
 import { terminate } from '@lvce-editor/viewlet-registry'
 import * as WriteFiles from '../CopyFilesToClipBoard/CopyFilesToClipBoard.ts'
 import * as EnableMemoryClipBoard from '../EnableMemoryClipBoard/EnableMemoryClipBoard.ts'
+import { handleMessagePort } from '../HandleMessagePort/HandleMessagePort.ts'
 import * as HotReload from '../HotReload/HotReload.ts'
 import * as Initialize from '../Initialize/Initialize.ts'
 import * as MemoryClipBoardState from '../MemoryClipBoardState/MemoryClipBoardState.ts'
@@ -14,6 +15,7 @@ import * as WriteText from '../WriteText/WriteText.ts'
 export const commandMap = {
   'ClipBoard.disableMemoryClipBoard': EnableMemoryClipBoard.disableMemoryClipBoard,
   'ClipBoard.enableMemoryClipBoard': EnableMemoryClipBoard.enableMemoryClipBoard,
+  'ClipBoard.handleMessagePort': handleMessagePort,
   'ClipBoard.hotReload': HotReload.hotReload,
   'ClipBoard.initialize': Initialize.initialize,
   'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
