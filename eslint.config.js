@@ -27,6 +27,7 @@ export default [
       'jest/no-identical-title': 'off',
       'unicorn/prefer-single-call': 'off',
       'jest/no-restricted-jest-methods': 'off',
+      '@cspell/spellchecker': 'off',
     },
   },
   {
