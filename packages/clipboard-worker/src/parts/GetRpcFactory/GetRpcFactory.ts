@@ -1,4 +1,4 @@
-import { type Rpc } from '@lvce-editor/rpc'
+import type { Rpc } from '@lvce-editor/rpc'
 import { createClipBoardProcessRpcElectron } from '../CreateFileSystemProcessRpcElectron/CreateFileSystemProcessRpcElectron.ts'
 import { createClipBoardProcessRpcNode } from '../CreateFileSystemProcessRpcNode/CreateFileSystemProcessRpcNode.ts'
 import * as PlatformType from '../PlatformType/PlatformType.ts'
