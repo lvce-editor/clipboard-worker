@@ -24,6 +24,7 @@ export default [
       '@typescript-eslint/prefer-readonly-parameter-types': 'off',
       'prefer-destructuring': 'off',
       'unicorn/no-for-loop': 'off',
+      'unicorn/no-top-level-assignment-in-function': 'off',
       'jest/no-identical-title': 'off',
       'unicorn/prefer-single-call': 'off',
       'jest/no-restricted-jest-methods': 'off',
@@ -34,6 +35,7 @@ export default [
     files: ['**/*.test.ts'],
     rules: {
       '@typescript-eslint/unbound-method': 'off',
+      'unicorn/no-error-property-assignment': 'off',
     },
   },
 ]
