@@ -23,10 +23,10 @@ const getWriteNativeFilesArgsXsel = (files: readonly string[]): readonly ExecArg
 // TODO support multiple
 export const getWriteNativeFilesArgs = (files: readonly string[]): readonly ExecArgs[] => {
   const useClip = true
-  const useXsel = false
   if (useClip) {
     return getWriteNativeFilesArgsXClip(files)
   }
+  const useXsel = false
   if (useXsel) {
     return getWriteNativeFilesArgsXsel(files)
   }
