@@ -5,6 +5,7 @@ beforeEach(() => {
   MemoryClipBoardState.set(false)
   MemoryClipBoardState.writeText('')
   MemoryClipBoardState.writeFiles([])
+  MemoryClipBoardState.writeImage(undefined)
 })
 
 test('should set and get enabled state', () => {
@@ -27,7 +28,14 @@ test('should write and read files', () => {
   expect(MemoryClipBoardState.readFiles()).toEqual(testFiles)
 })
 
+test('should write and read image', () => {
+  const testImage = new Blob(['image'], { type: 'image/png' })
+  MemoryClipBoardState.writeImage(testImage)
+  expect(MemoryClipBoardState.readImage()).toBe(testImage)
+})
+
 test('should handle empty text and files', () => {
   expect(MemoryClipBoardState.readText()).toBe('')
   expect(MemoryClipBoardState.readFiles()).toEqual([])
+  expect(MemoryClipBoardState.readImage()).toBeUndefined()
 })

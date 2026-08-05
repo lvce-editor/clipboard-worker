@@ -9,9 +9,22 @@ jest.unstable_mockModule('../src/parts/RendererProcess/RendererProcess.ts', () =
 })
 
 const WriteImage = await import('../src/parts/WriteImage/WriteImage.ts')
+const MemoryClipBoardState = await import('../src/parts/MemoryClipBoardState/MemoryClipBoardState.ts')
 
 beforeEach(() => {
   jest.resetAllMocks()
+  MemoryClipBoardState.set(false)
+  MemoryClipBoardState.writeImage(undefined)
+})
+
+test('writeImage should write image to memory clipboard when enabled', async () => {
+  const testBlob = new Blob(['test'], { type: 'image/png' })
+  MemoryClipBoardState.set(true)
+
+  await WriteImage.writeImage(testBlob)
+
+  expect(MemoryClipBoardState.readImage()).toBe(testBlob)
+  expect(mockInvoke).not.toHaveBeenCalled()
 })
 
 test('writeImage should write image to clipboard successfully', async () => {
