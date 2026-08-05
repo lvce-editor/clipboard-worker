@@ -18,6 +18,7 @@ export const commandMap = {
   'ClipBoard.handleMessagePort': handleMessagePort,
   'ClipBoard.hotReload': HotReload.hotReload,
   'ClipBoard.initialize': Initialize.initialize,
+  'ClipBoard.readMemoryImage': MemoryClipBoardState.readImage,
   'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
   'ClipBoard.readNativeFiles': ReadFilesNative.readNativeFiles,
   'ClipBoard.readText': ReadText.readText,
