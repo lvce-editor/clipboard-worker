@@ -15,8 +15,9 @@ export const sendMessagePortToEditorWorker = (
 ): ReturnType<typeof RendererWorker.sendMessagePortToEditorWorker> => RendererWorker.sendMessagePortToEditorWorker(...args)
 
 export const sendMessagePortToExtensionHostWorker = (
-  ...args: Readonly<Parameters<typeof RendererWorker.sendMessagePortToExtensionHostWorker>>
-): ReturnType<typeof RendererWorker.sendMessagePortToExtensionHostWorker> => RendererWorker.sendMessagePortToExtensionHostWorker(...args)
+  ...args: Readonly<Parameters<typeof RendererWorker.sendMessagePortToExtensionManagementWorker>>
+): ReturnType<typeof RendererWorker.sendMessagePortToExtensionManagementWorker> =>
+  RendererWorker.sendMessagePortToExtensionManagementWorker(...args)
 
 export const sendMessagePortToRendererProcess = (
   ...args: Readonly<Parameters<typeof RendererWorker.sendMessagePortToRendererProcess>>
