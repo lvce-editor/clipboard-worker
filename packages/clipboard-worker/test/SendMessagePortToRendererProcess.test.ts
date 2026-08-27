@@ -10,7 +10,7 @@ jest.unstable_mockModule('../src/parts/RendererWorker/RendererWorker.ts', () => 
 
 jest.unstable_mockModule('@lvce-editor/rpc-registry', () => ({
   RpcId: {
-    DebugWorker: 55,
+    ClipBoardWorker: 3400,
   },
 }))
 
@@ -30,6 +30,6 @@ test('sendMessagePortToRendererProcess should invoke and transfer port', async (
     'SendMessagePortToExtensionHostWorker.sendMessagePortToRendererProcess',
     mockPort,
     'HandleMessagePort.handleMessagePort',
-    55,
+    3400,
   )
 })
