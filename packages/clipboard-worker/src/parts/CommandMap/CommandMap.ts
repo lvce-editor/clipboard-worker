@@ -6,6 +6,7 @@ import * as HotReload from '../HotReload/HotReload.ts'
 import * as Initialize from '../Initialize/Initialize.ts'
 import * as MemoryClipBoardState from '../MemoryClipBoardState/MemoryClipBoardState.ts'
 import * as ReadFilesNative from '../ReadFilesNative/ReadFilesNative.ts'
+import * as ReadImage from '../ReadImage/ReadImage.ts'
 import * as ReadText from '../ReadText/ReadText.ts'
 import * as WriteBlob from '../WriteBlob/WriteBlob.ts'
 import * as WriteFilesNative from '../WriteFilesNative/WriteFilesNative.ts'
@@ -18,6 +19,7 @@ export const commandMap = {
   'ClipBoard.handleMessagePort': handleMessagePort,
   'ClipBoard.hotReload': HotReload.hotReload,
   'ClipBoard.initialize': Initialize.initialize,
+  'ClipBoard.readImage': ReadImage.readImage,
   'ClipBoard.readMemoryImage': MemoryClipBoardState.readImage,
   'ClipBoard.readMemoryText': MemoryClipBoardState.readText,
   'ClipBoard.readNativeFiles': ReadFilesNative.readNativeFiles,
